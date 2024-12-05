@@ -1,0 +1,810 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgalf5lvkrmfj"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_7ce14"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_30aeq"]
+[ext_resource type="PackedScene" uid="uid://dtyb3fq2jsuty" path="res://Scenes/disk.tscn" id="2_iei2e"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="3_tkheq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg7qo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pk7wq"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("PrefabParent")]
+position = Vector2(640, 50)
+script = ExtResource("1_30aeq")
+Prefab = ExtResource("2_iei2e")
+PrefabParent = NodePath("../Disk Parent")
+
+[node name="Ellipse" type="Node2D" parent="Player"]
+script = ExtResource("1_7ce14")
+size = Vector2(25, 25)
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Wall Left" type="StaticBody2D" parent="Level"]
+position = Vector2(16, 397)
+rotation = -0.226893
+scale = Vector2(10.921, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall Left"]
+shape = SubResource("RectangleShape2D_mg7qo")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Wall Left"]
+script = ExtResource("3_tkheq")
+size = Vector2(20, 20)
+corner_radius = 0.0
+fill_color = Color(0.372549, 0.929412, 0.513726, 1)
+metadata/_edit_lock_ = true
+
+[node name="Wall Right" type="StaticBody2D" parent="Level"]
+position = Vector2(1286, 396)
+rotation = 0.226893
+scale = Vector2(10.921, 72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall Right"]
+shape = SubResource("RectangleShape2D_mg7qo")
+metadata/_edit_lock_ = true
+
+[node name="Rectangle" type="Node2D" parent="Level/Wall Right"]
+script = ExtResource("3_tkheq")
+size = Vector2(20, 20)
+corner_radius = 0.0
+fill_color = Color(0.372549, 0.929412, 0.513726, 1)
+metadata/_edit_lock_ = true
+
+[node name="Pegs" type="Node2D" parent="Level"]
+
+[node name="Row 1" type="Node2D" parent="Level/Pegs"]
+
+[node name="Peg 1" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 1"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 1"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 11" type="StaticBody2D" parent="Level/Pegs/Row 1"]
+position = Vector2(1145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 1/Peg 11"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 1/Peg 11"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Row 2" type="Node2D" parent="Level/Pegs"]
+position = Vector2(-48, 77)
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 11" type="StaticBody2D" parent="Level/Pegs/Row 2"]
+position = Vector2(1145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 2/Peg 11"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 2/Peg 11"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Row 3" type="Node2D" parent="Level/Pegs"]
+position = Vector2(3, 139)
+
+[node name="Peg 1" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 1"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 1"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 11" type="StaticBody2D" parent="Level/Pegs/Row 3"]
+position = Vector2(1145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 3/Peg 11"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 3/Peg 11"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Row 4" type="Node2D" parent="Level/Pegs"]
+position = Vector2(-48, 217)
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 11" type="StaticBody2D" parent="Level/Pegs/Row 4"]
+position = Vector2(1145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 4/Peg 11"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 4/Peg 11"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Row 5" type="Node2D" parent="Level/Pegs"]
+position = Vector2(-1, 295)
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 5"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 5/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 5/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Row 6" type="Node2D" parent="Level/Pegs"]
+position = Vector2(-48, 371)
+
+[node name="Peg 2" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 2"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 2"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 3" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(345, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 3"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 3"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 4" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(445, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 4"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 4"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 5" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(545, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 5"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 5"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 6" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(645, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 6"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 6"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 7" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(745, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 7"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 7"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 8" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(845, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 8"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 8"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 9" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(945, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 9"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 9"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 10" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(1045, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 10"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 10"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Peg 11" type="StaticBody2D" parent="Level/Pegs/Row 6"]
+position = Vector2(1145, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Pegs/Row 6/Peg 11"]
+shape = SubResource("CircleShape2D_pk7wq")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Level/Pegs/Row 6/Peg 11"]
+script = ExtResource("1_7ce14")
+size = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Disk Parent" type="Node2D" parent="."]
